@@ -1,6 +1,6 @@
-== OvhRb
+== ovh-rb
 
-OvhRb helps you to use the OVH SOAPI in a ruby way
+ovh-rb helps you to use the OVH SOAPI in a ruby way
 
 === Installation
  gem install ovh-rb
@@ -22,7 +22,7 @@ For example :
  result = soapi.domainInfo(session, 'mydomain.com')
 
 Becomes :
- require 'ovh_rb'
+ require 'ovh-rb'
 
  OvhRb::Session.new('xxxxxx-ovh', '******') do |session|
    result = session.domain_info("mydomain.com")
