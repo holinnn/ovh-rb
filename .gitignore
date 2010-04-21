@@ -20,5 +20,7 @@ pkg
 
 ## PROJECT::SPECIFIC
 lib/conf/
+lib/main.rb
 Rakefile
 test/
+
