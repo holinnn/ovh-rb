@@ -1,11 +1,11 @@
-== ovh-rb
+= ovh-rb
 
 ovh-rb helps you to use the OVH SOAPI in a ruby way
 
-=== Installation
+== Installation
  gem install ovh-rb
 
-=== Usage
+== Usage
 All methods are available here http://www.ovh.com/soapi/fr/
 
 For example :
@@ -30,7 +30,7 @@ Becomes :
 
 So every methods in the SOAPI has an equivalent following ruby conventions
 
-=== Object returned
+== Object returned
 Executing rpsGetIoStats with SOAP will return :
  #<SOAP::Mapping::Object:0x..fdb887088 {}average=#<SOAP::Mapping::Object:0x..fdb8865c0 
  {}serviceTime=#<SOAP::Mapping::Object:0x..fdb885b48 {}raw="24.033581551715"> 
@@ -51,6 +51,6 @@ Executing rps_get_io_stats with ovh-rb will return :
  @current=#<OvhRb::OvhObject:0xb6e326bc @service_time="20.6009784756978", 
  @io_requests=#<OvhRb::OvhObject:0xb6e72690 @write="5.66746463326707", @read="0">>>
 
-=== Licence
+== Licence
 
 ovh-rb is under GPL licence
