@@ -1,17 +1,52 @@
-= ovh-rb
+== OvhRb
 
-Description goes here.
+OvhRb helps you to use the OVH SOAPI in a ruby way
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+All methods are available here http://www.ovh.com/soapi/fr/
 
-== Copyright
+For example :
+  require 'soap/wsdlDriver'
 
-Copyright (c) 2010 Aurélien. See LICENSE for details.
+  wsdl = 'https://www.ovh.com/soapi/soapi-re-1.9.wsdl'
+  soapi = SOAP::WSDLDriverFactory.new(wsdl).create_rpc_driver
+
+  #login
+  session = soapi.login('xxxxxx-ovh', '******', 'fr', false)
+  puts "login successfull"
+
+  #domainInfo
+  result = soapi.domainInfo(session, 'mydomain.com')
+
+Becomes :
+  require 'ovh_rb'
+
+  OvhRb::Session.new('xxxxxx-ovh', '******') do |session|
+    result = session.domain_info("mydomain.com")
+  end
+
+So every methods in the SOAPI has an equivalent following ruby conventions
+
+=== Object returned
+Executing rpsGetIoStats with SOAP will return :
+  #<SOAP::Mapping::Object:0x..fdb887088 {}average=#<SOAP::Mapping::Object:0x..fdb8865c0 
+  {}serviceTime=#<SOAP::Mapping::Object:0x..fdb885b48 {}raw="24.033581551715"> 
+  {}IoRequests=#<SOAP::Mapping::Object:0x..fdb884a22 {}read=#<SOAP::Mapping::Object:0x..fdb8841d0 
+  {}raw="0.0868578964721398"> {}write=#<SOAP::Mapping::Object:0x..fdb8835dc {}raw="6.49833242398628">>> 
+  {}max=#<SOAP::Mapping::Object:0x..fdb88130e {}serviceTime=#<SOAP::Mapping::Object:0x..fdb8809b8 {}raw="72.5948119715954"> 
+  {}IoRequests=#<SOAP::Mapping::Object:0x..fdb87ffae {}read=#<SOAP::Mapping::Object:0x..fdb87fa7c {}raw="42.4079216629491"> 
+  {}write=#<SOAP::Mapping::Object:0x..fdb87ed20 {}raw="299.651590028509">>> {}current=#<SOAP::Mapping::Object:0x..fdb87bfd0 
+  {}serviceTime=#<SOAP::Mapping::Object:0x..fdb87b7e2 {}raw="20.6009784756978"> {}IoRequests=#<SOAP::Mapping::Object:0x..fdb87a680 
+  {}read=#<SOAP::Mapping::Object:0x..fdb879b4a {}raw="0"> {}write=#<SOAP::Mapping::Object:0x..fdb8781f0 {}raw="5.66746463326707">>> 
+  {}image="https://www.ovh.com:444/iostat/91.121.191/16/608759725540.png">
+
+Executing rps_get_io_stats with OvhRb will return :
+  #<OvhRb::OvhObject:0xb6e2d284 @max=#<OvhRb::OvhObject:0xb6e2a700 @service_time="72.5948119715954", 
+  @io_requests=#<OvhRb::OvhObject:0xb6e29d64 @write="299.651590028509", @read="42.4079216629491">>, 
+  @average=#<OvhRb::OvhObject:0xb6e2cbf4 @service_time="24.033581551715", @io_requests=#<OvhRb::OvhObject:0xb6e2be34 
+  @write="6.49833242398628", @read="0.0868578964721398">>, @image="https://www.ovh.com:444/iostat/91.121.191/16/852220927438.png", 
+  @current=#<OvhRb::OvhObject:0xb6e326bc @service_time="20.6009784756978", 
+  @io_requests=#<OvhRb::OvhObject:0xb6e72690 @write="5.66746463326707", @read="0">>>
+
+=== Licence
+
+OvhRb is under GPL licence

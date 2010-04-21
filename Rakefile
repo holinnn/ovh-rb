@@ -5,12 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ovh-rb"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "OvhRb helps you to use the OVH SOAPI in a ruby way "
     gem.email = "aurelien.amilin@gmail.com"
-    gem.homepage = "http://github.com/holinnn/ovh-rb"
-    gem.authors = ["Aurélien"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.homepage = "http://github.com/holinnn/OvhRb"
+    gem.authors = ["Aurélien AMILIN"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -51,3 +49,4 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
