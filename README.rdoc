@@ -43,7 +43,7 @@ Executing rpsGetIoStats with SOAP will return :
  {}read=#<SOAP::Mapping::Object:0x..fdb879b4a {}raw="0"> {}write=#<SOAP::Mapping::Object:0x..fdb8781f0 {}raw="5.66746463326707">>> 
  {}image="https://www.ovh.com:444/iostat/91.121.191/16/608759725540.png">
 
-Executing rps_get_io_stats with OvhRb will return :
+Executing rps_get_io_stats with ovh-rb will return :
  #<OvhRb::OvhObject:0xb6e2d284 @max=#<OvhRb::OvhObject:0xb6e2a700 @service_time="72.5948119715954", 
  @io_requests=#<OvhRb::OvhObject:0xb6e29d64 @write="299.651590028509", @read="42.4079216629491">>, 
  @average=#<OvhRb::OvhObject:0xb6e2cbf4 @service_time="24.033581551715", @io_requests=#<OvhRb::OvhObject:0xb6e2be34 
@@ -53,4 +53,4 @@ Executing rps_get_io_stats with OvhRb will return :
 
 === Licence
 
-OvhRb is under GPL licence
+ovh-rb is under GPL licence
