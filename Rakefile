@@ -5,9 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ovh-rb"
-    gem.summary = "OvhRb helps you to use the OVH SOAPI in a ruby way "
+    gem.summary = "ovh-rb helps you to use the OVH SOAPI in a ruby way "
     gem.email = "aurelien.amilin@gmail.com"
-    gem.homepage = "http://github.com/holinnn/OvhRb"
+    gem.homepage = "http://github.com/holinnn/ovh-rb"
     gem.authors = ["Aurélien AMILIN"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

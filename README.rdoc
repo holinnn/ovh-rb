@@ -2,6 +2,10 @@
 
 OvhRb helps you to use the OVH SOAPI in a ruby way
 
+=== Installation
+  gem install ovh-rb
+
+=== Usage
 All methods are available here http://www.ovh.com/soapi/fr/
 
 For example :
